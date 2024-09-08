@@ -32,11 +32,13 @@
   :link '(url-link :tag "Source code repository" "https://github.com/pivaldi/php-fh")
   :link '(url-link :tag "Executable dependency" "https://www.php.net/"))
 
+;;;###autoload
 (defcustom php-fh-user-functions-name '("empty")
   "List of PHP user defined functions that php-fh must highlight."
   :type '(repeat string)
   :group 'php-fh)
 
+;;;###autoload
 (defcustom php-fh-php-cmd (executable-find "php")
   "The PHP command."
   :type 'string
@@ -101,11 +103,12 @@ variable `php-fh-user-functions-name'."
   (let* ((all-func (php-fh--lines-to-list-from-file (php-fh--get-generated-php-funcs-file-path)))
          (l (length all-func))
          (n 0)
-         (php-functions-name php-fh-user-functions-name))
+         (php-functions-name nil))
     ;; regexp-opt cannot parse all-func at once (failed in php-add-function-keywords)
     (while (and (< n l)
                 (add-to-list 'php-functions-name (php-fh--nth-list all-func n 150) t)
                 (setq n (+ n 150))))
+    (add-to-list 'php-functions-name php-fh-user-functions-name)
     (dolist (php-function-name php-functions-name)
       (php-fh--add-function-keywords php-function-name)))
   t)
