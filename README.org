@@ -1,0 +1,34 @@
+#+title: PHP Functions Highlighter for Emacs
+
+Provide font highlighting of all PHP functions within =php-mode= for Emacs.
+
+* Installation
+
+** From Melpa
+
+This package is not part of Melpa for now, waiting for maturity…
+
+** Manually
+
+This package requires that the [[https://github.com/emacs-php/php-mode][php-mode]] package was installed.
+
+To install =php-fh.el=, place =php-fh.el= in a
+directory of your choice, add it to your load path and require
+=php-fh= writing this code in your Emacs configuration file (aka .emacs) :
+
+#+BEGIN_SRC elisp
+    (add-to-list 'load-path "/place/where/you/put/it/")
+    (require 'php-fh)
+#+END_SRC
+
+Either evaluate both statements with =C-x C-e=, or restart /Emacs/.
+
+* Usage
+
+=(eval-after-load 'php-mode '(php-fh-highlight))=
+
+* Customisable variables
+
+- =php-fh-user-functions-name= : list of PHP user defined functions that
+  =php-fh= must also highlight.
+- =php-fh-php-cmd= : The PHP command.
