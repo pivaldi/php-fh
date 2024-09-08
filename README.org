@@ -12,12 +12,12 @@ This package is not part of Melpa for now, waiting for maturity…
 
 This package requires that the [[https://github.com/emacs-php/php-mode][php-mode]] package was installed.
 
-To install =php-fh.el=, place =php-fh.el= in a
+To install =php-fh=, place/clone the =php-fh= directory in a
 directory of your choice, add it to your load path and require
-=php-fh= writing this code in your Emacs configuration file (aka .emacs) :
+=php-fh= writing this code in your Emacs configuration file (=.emacs= ?) :
 
 #+BEGIN_SRC elisp
-    (add-to-list 'load-path "/place/where/you/put/it/")
+    (add-to-list 'load-path "/place/where/you/put/php-fh")
     (require 'php-fh)
 #+END_SRC
 
