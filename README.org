@@ -1,6 +1,6 @@
 #+title: PHP Functions Highlighter for Emacs
 
-Provide font highlighting of all PHP functions within =php-mode= for Emacs.
+Provide font highlighting of all PHP functions within =php-mode= for /Emacs/.
 
 * Installation
 
@@ -14,16 +14,17 @@ This package requires that the [[https://github.com/emacs-php/php-mode][php-mode
 
 To install =php-fh=, place/clone the =php-fh= directory in a
 directory of your choice, add it to your load path and require
-=php-fh= writing this code in your Emacs configuration file (=.emacs= ?) :
+=php-fh= writing this code in your /Emacs/ configuration file (=.emacs= ?) :
 
 #+BEGIN_SRC elisp
-    (add-to-list 'load-path "/place/where/you/put/php-fh")
-    (require 'php-fh)
+(add-to-list 'load-path "/place/where/you/put/php-fh")
+(require 'php-fh)
+(eval-after-load 'php-mode '(php-fh-highlight))
 #+END_SRC
 
-Either evaluate both statements with =C-x C-e=, or restart /Emacs/.
+Either evaluate each statements individuality with =C-x C-e= or restart /Emacs/.
 
-** With Doom
+** With [[https://github.com/doomemacs/doomemacs][Doom Emacs]]
 - In the file =packages.el= place this code :
   #+begin_src lisp
 (package! php-fh
@@ -37,10 +38,7 @@ Either evaluate both statements with =C-x C-e=, or restart /Emacs/.
   :init
   (after! php-mode (php-fh-highlight)))
   #+end_src
-
-* Usage
-
-=(eval-after-load 'php-mode '(php-fh-highlight))=
+- Launch the command =doom sync= and restart /Doom Emacs/.
 
 * Customisable variables
 
