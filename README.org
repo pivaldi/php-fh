@@ -23,6 +23,21 @@ directory of your choice, add it to your load path and require
 
 Either evaluate both statements with =C-x C-e=, or restart /Emacs/.
 
+** With Doom
+- In the file =packages.el= place this code :
+  #+begin_src lisp
+(package! php-fh
+  :recipe (:host github :repo "pivaldi/php-fh"))
+  #+end_src
+- In the file =config.el= place this code :
+  #+begin_src lisp
+(use-package! php-fh
+  :defer t
+  :autoload (php-fh-highlight)
+  :init
+  (after! php-mode (php-fh-highlight)))
+  #+end_src
+
 * Usage
 
 =(eval-after-load 'php-mode '(php-fh-highlight))=
