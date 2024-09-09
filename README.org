@@ -13,6 +13,14 @@ The same piece of code with =php-fh= loaded :
 #+CAPTION: The same piece of code with php-fh loaded.
 [[./assets/with-php-fh.png]]
 
+* Important Note
+
+This package make the fontification of the functions name by regexp using /Emacs
+Lisp/ function =font-lock-add-keywords=; this can slow down
+your computer.
+
+So, *do not use this package if you have a computer with low CPU*.
+
 * Installation
 
 ** From Melpa
