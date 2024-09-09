@@ -39,6 +39,14 @@
   :group 'php-fh)
 
 ;;;###autoload
+(defcustom php-fh-php-generate-funcs-code "foreach (get_defined_functions()['internal'] as $func) {
+    echo $func . \"\n\";
+}"
+  "The PHP code to generate the native PHP functions."
+  :type 'string
+  :group 'php-fh)
+
+;;;###autoload
 (defcustom php-fh-php-cmd (executable-find "php")
   "The PHP command."
   :type 'string
@@ -68,7 +76,7 @@
     (unless (file-directory-p php-fh-data-dir)
       (make-directory php-fh-data-dir))
     (with-temp-file (or fname (php-fh--get-generated-php-funcs-file-path))
-      (insert (shell-command-to-string (format "%s -f %s" php-fh-php-cmd scriptpath))))))
+      (insert (shell-command-to-string (format "%s -r %s" php-fh-php-cmd (shell-quote-argument php-fh-php-generate-funcs-code)))))))
 
 (defun php-fh--add-function-keywords (function-keywords)
   (let* ((keyword-regexp

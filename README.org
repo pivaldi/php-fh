@@ -61,8 +61,10 @@ Either evaluate each statements individuality with =C-x C-e= or restart /Emacs/.
 
 * Customisable variables
 
-- =php-fh-user-functions-name= : list of PHP user defined functions that
+- =php-fh-user-functions-name= : list of /PHP/ user defined functions that
   =php-fh= must also highlight.
+- =php-fh-php-generate-funcs-code= : the /PHP/ code used to generate all
+  internal /PHP/ functions.
 - =php-fh-php-cmd= : The PHP command.
 
 * Regenerate the list of native PHP function
