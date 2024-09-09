@@ -1,6 +1,13 @@
 #+title: PHP Functions Highlighter for Emacs
 
-Provide font highlighting of all PHP functions within =php-mode= for /Emacs/.
+This /Emacs/ package provides font highlighting of all native and user defined
+PHP functions within =php-mode=.
+
+#+CAPTION: A piece of code without php-fh loaded.
+[[./assets/without-php-fh.png]]
+
+#+CAPTION: The same piece of code with php-fh loaded.
+[[./assets/with-php-fh.png]]
 
 * Installation
 
@@ -45,3 +52,7 @@ Either evaluate each statements individuality with =C-x C-e= or restart /Emacs/.
 - =php-fh-user-functions-name= : list of PHP user defined functions that
   =php-fh= must also highlight.
 - =php-fh-php-cmd= : The PHP command.
+
+* Regenerate the list of native PHP function
+In order to regenerate the list of native /PHP/ function used by =php-hf=, use
+the /Emacs/ command =php-fh-generate-php-func-file= (=M-x etc…=).
