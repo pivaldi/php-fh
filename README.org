@@ -15,7 +15,7 @@ The same piece of code with =php-fh= loaded :
 
 * Important Note
 
-This package make the fontification of the functions name by regexp using /Emacs
+This package make the fontification of the functions name by regexp using the /Emacs
 Lisp/ function =font-lock-add-keywords=; this can slow down
 your computer.
 
