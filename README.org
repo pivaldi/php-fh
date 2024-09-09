@@ -3,8 +3,12 @@
 This /Emacs/ package provides font highlighting of all native and user defined
 PHP functions within =php-mode=.
 
+A piece of code without =php-fh= loaded.
+
 #+CAPTION: A piece of code without php-fh loaded.
 [[./assets/without-php-fh.png]]
+
+The same piece of code with =php-fh= loaded.
 
 #+CAPTION: The same piece of code with php-fh loaded.
 [[./assets/with-php-fh.png]]
