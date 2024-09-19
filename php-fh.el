@@ -97,6 +97,7 @@ The elements of LIST are not copied, just the list structure itself."
 
 (defun php-fh--lines-to-list-from-file (file)
   "Return a list of lines of FILE."
+  (require 'lisp-mnt)
   (lm-with-file file
     (split-string (buffer-string) "\n" t)))
 
